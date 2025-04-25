@@ -548,6 +548,16 @@ article .icon{
     transform: scale(1.05); /* Slightly increase the size of the button */
 }
 
+/* View More Button Section */
+#view-more-container {
+    display: flex;
+    justify-content: center; /* This centers the button horizontally */
+    align-items: center; /* This ensures the button is vertically aligned if the height is adjusted */
+    margin-top:0.5rem; /* Add some spacing above the button */
+    z-index: 10;
+    position: relative; /* Needed for positioning context */
+}
+
 
 #contact{
     display: flex;
