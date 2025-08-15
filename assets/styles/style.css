@@ -1,7 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-/* Default Light Mode */
+/* Light theme (default) */
 :root {
   --primary-color: white;
   --primary-color-2: rgb(250, 250, 250);
@@ -16,7 +16,7 @@
   --container-border: rgb(163, 163, 163);
 }
 
-/* Dark Mode */
+/* Dark theme */
 [theme="dark"] {
   --primary-color: black;
   --primary-color-2: rgb(39, 39, 39);
@@ -32,7 +32,7 @@
 }
 
 
-/* Default Margin, Padding */
+/* Reset margin and padding */
 * {
     margin: 0;
     padding: 0;
@@ -55,39 +55,39 @@ p {
     color: var(--secondary-color-2);
 }
 
-/* For Custom Cursor(yellow) */
+/* Custom cursor (yellow) */
 #custom-cursor {
     position: fixed;
     width: 16px;
     height: 16px;
-    background-image: url('../images/pointer-svgrepo-com.svg'); /* Cursor Img url */
+    background-image: url('../images/pointer-svgrepo-com.svg'); /* Custom cursor image */
     background-size: contain;
     background-repeat: no-repeat;
-    pointer-events: none; /* Ensures it doesn't interfere with clicks */
+    pointer-events: none; /* Don't block clicks */
     transition: opacity 0.2s ease-out, transform 0.1s ease-out;
     z-index: 10000;
     opacity: 1;
 }
 
-/* Hide default cursor on PC */
+/* Hide default cursor on desktop */
 @media screen and (min-width: 1025px) {
     body {
         cursor: none !important; 
     }
 
-    /* Custom cursor applied everywhere */
+    /* Show custom cursor globally */
     #custom-cursor {
         display: block !important; 
     }
 
-    /* Prevent default cursor from all interactive elements (links, buttons, ..) */
+    /* Hide default cursor on interactive elements (links, buttons, etc.) */
     a, button, input, textarea, select, a:hover, button:hover, input:hover, textarea:hover, select:hover,
     .logo, .logo:hover, img, img:hover {
         cursor: none !important;
     }
 }
 
-/* Hide custom cursor (mobile/tablet screens) */
+/* Hide custom cursor on mobile/tablet */
 @media screen and (max-width: 1024px) {
     #custom-cursor {
         display: none !important;
@@ -102,7 +102,7 @@ a, .btn{
     transition: all 300ms ease;
 }
 
-/*Nav-Desk*/
+/* Desktop navigation */
 
 nav, .links-nav{
     display: flex;
@@ -156,7 +156,7 @@ nav a:hover{
     cursor: default;
 }
 
-/* Mobile Menu  */
+/* Mobile menu */
 
 #nav-mobile{
     display: none;
@@ -239,7 +239,7 @@ nav a:hover{
     transform: none;
 }
 
-/*Sections */
+/* Sections */
 
 section{
     padding-top: 4vh;
@@ -253,7 +253,7 @@ section{
     display: flex;
 }
 
-/* PRofile */
+/* Profile */
 
 #profile{
     display: flex;
@@ -369,13 +369,13 @@ section{
 }
 
 
-/* Scroll Down Section */
+/* Scroll-down section */
 #scroll-down-container {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 5%; /* Adjust for better placement */
+    bottom: 5%; /* Adjust as needed */
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
@@ -401,24 +401,24 @@ section{
     }
 }
 
-/* Responsiveness for smaller screens */
+/* Responsive tweaks (tablet) */
 @media screen and (max-width: 1024px) {
     #scroll-down-container {
-        bottom: 8%; /* Adjust for tablet screens */
+    bottom: 8%; /* Adjust for tablets */
     }
 
     #scroll-mouse-icon {
-        width: 35px; /* Slightly smaller icon for mobile/tablets */
+    width: 35px; /* Slightly smaller icon for mobile/tablet */
     }
 }
 
 @media screen and (max-width: 600px) {
     #scroll-down-container {
-        bottom: 6%; /* Adjust position for very small mobile screens */
+    bottom: 6%; /* Adjust position for small phones */
     }
 
     #scroll-mouse-icon {
-        width: 30px; /* Even smaller icon for mobile */
+    width: 30px; /* Smaller icon for mobile */
     }
 }
 
@@ -540,22 +540,22 @@ article .icon{
 .project-btn {
     color: var(--secondary-color);
     border-color: var(--container-border);
-    border-radius: 2rem; /* Same rounded corners as the original */
-    transition: transform 0.4s ease; /* Smooth transition effect */
+    border-radius: 2rem; /* Match rounded corners */
+    transition: transform 0.4s ease; /* Smooth transform */
 }
 
 .project-btn:hover {
-    transform: scale(1.05); /* Slightly increase the size of the button */
+    transform: scale(1.05); /* Slightly enlarge button */
 }
 
-/* View More Button Section */
+/* View more button */
 #view-more-container {
     display: flex;
-    justify-content: center; /* This centers the button horizontally */
-    align-items: center; /* This ensures the button is vertically aligned if the height is adjusted */
-    margin-top:0.5rem; /* Add some spacing above the button */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Align vertically if height changes */
+    margin-top:0.5rem; /* Spacing above */
     z-index: 10;
-    position: relative; /* Needed for positioning context */
+    position: relative; /* Positioning context */
 }
 
 
@@ -616,7 +616,7 @@ footer p{
 
 
 
-/* Back-to-Top Button */
+/* Back-to-top button */
 #backToTop {
     position: fixed;
     bottom: 20px;
@@ -628,35 +628,35 @@ footer p{
     z-index: 100;
     opacity: 0; /* Start hidden */
     visibility: hidden; /* Initially invisible */
-    transition: opacity 0.5s ease, transform 0.3s ease-in-out, visibility 0s 0.5s; /* Transition for fade-in and fade-out */
+    transition: opacity 0.5s ease, transform 0.3s ease-in-out, visibility 0s 0.5s; /* Fade in/out transitions */
 }
 
-/* Show the button with fade-in effect */
+/* Show with fade-in */
 #backToTop.show {
-    opacity: 1; /* Make it visible */
-    visibility: visible; /* Ensure the button is visible */
-    transition: opacity 0.5s ease, visibility 0s 0s; /* Transition for fade-in */
+    opacity: 1; /* Visible */
+    visibility: visible; /* Ensure visibility */
+    transition: opacity 0.5s ease, visibility 0s 0s; /* Fade-in transition */
 }
 
 /* Hover effect */
 #backToTop:hover {
-    transform: translateY(-10px); /* Smooth pop-up effect */
-    transition: transform 0.3s ease-in-out; /* Add smooth transition for hover */
+    transform: translateY(-10px); /* Pop-up lift */
+    transition: transform 0.3s ease-in-out; /* Smooth hover transition */
 }
 
-/* Style for the SVG icon inside the button */
+/* SVG icon inside the button */
 #backToTop img {
     width: 30px; /* Icon size */
     height: 30px;
-    transition: transform 0.3s ease; /* Smooth scaling on hover */
+    transition: transform 0.3s ease; /* Smooth scale on hover */
 }
 
-/* Hover effect for the icon */
+/* Icon hover */
 #backToTop:hover img {
-    transform: scale(1.2); /* Slightly scale the icon on hover */
+    transform: scale(1.2); /* Slightly scale on hover */
 }
 
-/* Responsive Design */
+/* Responsive tweaks (back-to-top) */
 @media screen and (max-width: 600px) {
     #backToTop {
         bottom: 15px;
@@ -676,7 +676,7 @@ footer p{
 
 
 
-/* for Easter Egg(almost there jssss) */
+/* Easter egg (work in progress) */
 
 /* .hacker-mode-overlay {
     position: fixed;
@@ -734,7 +734,7 @@ footer p{
     z-index: 10001; 
 } */
 
-/* Matrix Rain Effect */
+/* Matrix rain effect */
 /* .matrix-rain {
     position: fixed;
     top: 0;

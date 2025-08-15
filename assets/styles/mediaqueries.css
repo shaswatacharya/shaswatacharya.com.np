@@ -1,4 +1,4 @@
-/* For responsiveness */
+/* Responsive layout */
 @media screen and (max-width: 1400px) {
     #profile {
         height: 83vh;
@@ -50,23 +50,23 @@
     }
 }
 
-/* Hide custom cursor for all mobile and tablet devices */
+/* Hide custom cursor on mobile/tablet */
 @media screen and (max-width: 1024px) {
     #custom-cursor {
-        display: none; /* Hides the cursor for all devices below 1024px */
+        display: none; /* Hide cursor below 1024px */
     }
 }
 
-/* Additional breakpoints to hide the custom cursor on smaller mobile devices (iPhone SE to iPhone 14 Pro Max and all tablets) */
+/* Extra breakpoints: hide cursor on small phones/tablets */
 @media screen and (max-width: 767px) { 
     #custom-cursor {
-        display: none; /* Ensures custom cursor is hidden on mobile devices */
+        display: none; /* Hide on mobile */
     }
 }
 
 @media screen and (max-width: 480px) {
     #custom-cursor {
-        display: none; /* Ensures custom cursor is hidden on very small mobile screens */
+        display: none; /* Hide on small screens */
     }
 }
 

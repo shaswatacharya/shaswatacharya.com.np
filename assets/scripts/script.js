@@ -1,4 +1,4 @@
-//for icons
+// Mobile menu toggle
 
 function toggleMenu(){
     
@@ -13,7 +13,7 @@ function toggleMenu(){
 }
 
 
-// Mode Switch
+// Theme switch
 
 const btn = document.getElementById("modeToggle");
 const btn2 = document.getElementById("modeToggle2");
@@ -34,6 +34,7 @@ btn2.addEventListener("click", function () {
 
 
 
+// Toggle theme based on the current body attribute
 function setTheme() {
   let currentTheme = document.body.getAttribute("theme");
 
@@ -44,7 +45,7 @@ function setTheme() {
   }
 }
 
-//dark mode logic
+// Dark mode
 function setDarkMode() {
   document.body.setAttribute("theme", "dark");
   localStorage.setItem("theme", "dark");
@@ -55,7 +56,7 @@ function setDarkMode() {
 }
 
 
-//light mode logic
+// Light mode
 
 
 function setLightMode() {
@@ -67,7 +68,7 @@ function setLightMode() {
   });
 }
 
-// Text Change logic
+// Typing effect: rotate through titles
 
 const textArray = ["Developer", "Designer"];
 let textIndex = 0;
@@ -96,66 +97,66 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// for custom cursor logic(yellow) 
+// Custom cursor (yellow)
 
-// Select cursor element
+// Get the custom cursor element.
 const cursor = document.getElementById("custom-cursor");
 
-// Check if the screen width is larger than 1024px (PC/Mac)
+// Only show the custom cursor on desktop screens.
 if (window.innerWidth > 1024) {
-  // Function to update cursor position
+  // Update cursor position on mouse move.
   document.addEventListener("mousemove", (e) => {
       const offsetX = 5; // Adjust left
       const offsetY = 2; // Adjust top
 
       cursor.style.left = `${e.clientX - offsetX}px`;
       cursor.style.top = `${e.clientY - offsetY}px`;
-      cursor.style.display = "block"; // Ensure it's visible
+  cursor.style.display = "block"; // Ensure it stays visible.
   });
 
-  // Hide cursor when mouse leaves the viewport
+  // Hide cursor when the mouse leaves the viewport.
   document.addEventListener("mouseleave", () => {
       cursor.style.opacity = "0"; // Smooth disappearance
   });
 
-  // Show cursor when mouse enters the viewport
+  // Show cursor when the mouse enters the viewport.
   document.addEventListener("mouseenter", () => {
       cursor.style.opacity = "1"; // Smooth reappearance
   });
 } else {
-  // If screen width is smaller, hide the cursor and disable the logic
+  // On smaller screens, hide the cursor and disable this logic.
   cursor.style.display = "none";
 }
 
 
-// Smooth scroll to the next section when the scroll icon is clicked
+// Smooth scroll to the next section when the scroll icon is clicked.
 document.getElementById("scroll-down-container").addEventListener("click", function() {
 window.scrollBy({
-    top: window.innerHeight, // Scroll by the height of the viewport
+  top: window.innerHeight, // Scroll by the viewport height.
     behavior: 'smooth'
 });
 });
 
 
 
-// 
+// Back-to-top button logic
 
 
-// Show the button when the user scrolls down with fade-in effect
+// Show the button on scroll with a fade-in effect.
 window.onscroll = function() {
 let scrollButton = document.getElementById("backToTop");
 if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-    scrollButton.classList.add('show'); // Add 'show' class to trigger fade-in
+  scrollButton.classList.add('show'); // Add 'show' class to trigger fade-in.
 } else {
-    scrollButton.classList.remove('show'); // Remove 'show' class to trigger fade-out
+  scrollButton.classList.remove('show'); // Remove 'show' class to trigger fade-out.
 }
 };
 
-// Smooth scroll to top when clicked
+// Smooth scroll to top when clicked.
 document.getElementById("backToTop").addEventListener("click", function() {
 window.scrollTo({
     top: 0,
-    behavior: 'smooth' // Smooth scroll effect
+  behavior: 'smooth' // Smooth scroll effect.
 });
 });
 
@@ -166,7 +167,7 @@ window.scrollTo({
 
 
 
-// Add Hacker Mode Easter Egg(reached the top) {Now Press CTRL+SHIFT+ALT+X}
+// Hacker Mode Easter Egg (press CTRL+SHIFT+ALT+X at the top of the page) — currently disabled.
 
 // let hackerModeEnabled = false;
 // let currentTextIndex = 0;
