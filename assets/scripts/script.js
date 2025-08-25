@@ -141,141 +141,25 @@ window.scrollBy({
 
 // Back-to-top button logic
 
+const scrollButton = document.getElementById("backToTop");
 
-// Show the button on scroll with a fade-in effect.
-window.onscroll = function() {
-let scrollButton = document.getElementById("backToTop");
-if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-  scrollButton.classList.add('show'); // Add 'show' class to trigger fade-in.
-} else {
-  scrollButton.classList.remove('show'); // Remove 'show' class to trigger fade-out.
-}
-};
+// Show/hide the button on scroll
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 200) {
+    scrollButton.classList.add("show"); // fade-in
+  } else {
+    scrollButton.classList.remove("show"); // fade-out
+  }
+});
 
-// Smooth scroll to top when clicked.
-document.getElementById("backToTop").addEventListener("click", function() {
-window.scrollTo({
+// Smooth scroll to top when clicked
+scrollButton.addEventListener("click", () => {
+  window.scrollTo({
     top: 0,
-  behavior: 'smooth' // Smooth scroll effect.
+    behavior: "smooth"
+  });
 });
-});
 
 
 
 
-
-
-
-
-// Hacker Mode Easter Egg (press CTRL+SHIFT+ALT+X at the top of the page) — currently disabled.
-
-// let hackerModeEnabled = false;
-// let currentTextIndex = 0;
-
-// document.addEventListener("keydown", function(event) {
-//     if (event.shiftKey && event.altKey && event.ctrlKey && event.key === "X") {
-//         hackerModeEnabled = !hackerModeEnabled;
-//         toggleHackerMode();
-//     }
-// });
-
-// function toggleHackerMode() {
-//     const hackerOverlay = document.getElementById("hacker-overlay");
-//     const matrixCanvas = document.getElementById("matrix-rain");
-//     const accessGrantedText = document.getElementById("access-granted-text");
-//     const typingEffectDiv = document.getElementById("typing-effect");
-
-//     if (hackerModeEnabled) {
-//         hackerOverlay.classList.add("active");
-//         accessGrantedText.classList.add("active");
-//         typingEffectDiv.classList.add("active");
-//         startMatrixEffect();
-//         startTypingEffect(); 
-//     } else {
-//         hackerOverlay.classList.remove("active");
-//         accessGrantedText.classList.remove("active");
-//         typingEffectDiv.classList.remove("active");
-//         stopMatrixEffect();
-//         stopTypingEffect();  
-//     }
-// }
-
-// function startMatrixEffect() {
-//     const canvas = document.getElementById("matrix-rain");
-//     const ctx = canvas.getContext("2d");
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight;
-
-//     const letters = "0101010101";
-//     const columns = canvas.width / 15;
-//     const drops = Array(Math.floor(columns)).fill(1);
-
-//     function drawMatrix() {
-//         ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-//         ctx.fillRect(0, 0, canvas.width, canvas.height);
-//         ctx.fillStyle = "#0f0";
-//         ctx.font = "15px monospace";
-
-//         for (let i = 0; i < drops.length; i++) {
-//             const text = letters[Math.floor(Math.random() * letters.length)];
-//             ctx.fillText(text, i * 15, drops[i] * 15);
-//             if (drops[i] * 15 > canvas.height && Math.random() > 0.95) {
-//                 drops[i] = 0;
-//             }
-//             drops[i]++;
-//         }
-//     }
-
-//     canvas.matrixInterval = setInterval(drawMatrix, 50);
-// }
-
-// function stopMatrixEffect() {
-//     const canvas = document.getElementById("matrix-rain");
-//     clearInterval(canvas.matrixInterval);
-//     const ctx = canvas.getContext("2d");
-//     ctx.clearRect(0, 0, canvas.width, canvas.height);
-// }
-
-// function startTypingEffect() {
-//     const typingEffectDiv = document.getElementById("typing-effect");
-//     const texts = [
-//         "Hacking the system...",
-//         "Bypassing security...",
-//         "Accessing files...",
-//         "Hacker Mode Activated!"
-//     ];
-  
-//     typingEffectDiv.innerHTML = ""; 
-//     typingEffectDiv.style.width = "0"; 
-//     typeNextText(texts);
-// }
-
-// function typeNextText(texts) {
-//     if (currentTextIndex < texts.length) {
-//         let text = texts[currentTextIndex];
-//         const typingEffectDiv = document.getElementById("typing-effect");
-
-//         let i = 0;
-//         typingEffectDiv.innerHTML = ""; 
-//         typingEffectDiv.style.width = "0"; 
-
-//         function typeChar() {
-//             if (i < text.length) {
-//                 typingEffectDiv.innerHTML += text.charAt(i);
-//                 i++;
-//                 setTimeout(typeChar, 100); 
-//             } else {
-//                 currentTextIndex++;
-//                 setTimeout(() => typeNextText(texts), 1000); 
-//             }
-//         }
-
-//         typeChar();
-//     }
-// }
-
-// function stopTypingEffect() {
-//     const typingEffectDiv = document.getElementById("typing-effect");
-//     typingEffectDiv.innerHTML = ""; 
-//     currentTextIndex = 0; 
-// }
