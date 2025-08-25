@@ -1,19 +1,20 @@
 {
   "name": "Shaswat Acharya Portfolio",
   "short_name": "ShaswatPortfolio",
-  "description": "Shaswat Acharya, a frontend developer from Nepal, showcases his projects, skills, and web development work.",
+  "description": "Shaswat Acharya, a frontend developer from Nepal, showcases his projects, skills, and web development work including modern web applications and creative designs.",
+  "lang": "en-US",
   "icons": [
     {
-      "src": "/assets/icons/icon-192x192.png",
-      "sizes": "192x192",
+      "src": "/favicon-96x96.png",
+      "sizes": "96x96",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/assets/icons/icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon",
+      "purpose": "any"
     }
   ],
   "start_url": "/?utm_source=homescreen",
@@ -21,6 +22,5 @@
   "background_color": "#ffffff",
   "theme_color": "#ffcc00",
   "orientation": "portrait-primary",
-  "scope": "/",
-  "lang": "en-US"
+  "scope": "/"
 }

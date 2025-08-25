@@ -1,4 +1,4 @@
-# # <img src="assets/images/tab-icon.png" alt="logo" width="35" height="35">  **SHASWAT ACHARYA — PORTFOLIO**
+## <img src="assets/images/tab-icon.png" alt="logo" width="35" height="35">  **SHASWAT ACHARYA — PORTFOLIO**
 
 A clean, minimal, and responsive one-page portfolio website showcasing my experience, skills, and projects — built with love, code, and a hint of design flair.
 
