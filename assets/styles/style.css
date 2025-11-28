@@ -684,79 +684,14 @@ footer p{
     }
 }
 
-
-
-
-
-
-
-
-/* Easter egg (work in progress) */
-
-/* .hacker-mode-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3); 
-    color: #00ff00;
-    font-family: monospace;
-    text-shadow: 0 0 5px #00ff00;
-    z-index: 9999; 
-    display: none; 
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    backdrop-filter: blur(5px); 
+html, body {
+    overflow-y: auto;           
+    overflow-x: hidden;        
+    scrollbar-width: none;      
 }
 
-.hacker-mode-overlay.active {
-    display: flex;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;               
 }
 
-#access-granted-text {
-    font-size: 4rem;
-    color: #00ff00;
-    text-shadow: 0 0 10px #00ff00, 0 0 15px #00ff00;
-    animation: blink 1s step-end infinite, typing 3s steps(20) 1s normal both;
-    z-index: 10001; 
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    0% { border-color: transparent; }
-    50% { border-color: #00ff00; }
-    100% { border-color: transparent; }
-}
-
-.typing-effect {
-    font-family: monospace;
-    color: #00ff00;
-    border-right: 3px solid #00ff00;
-    white-space: nowrap;
-    overflow: hidden;
-    width: 0;
-    animation: typing 5s steps(50) 1s 1 normal both, blink 0.75s step-end infinite;
-    margin-top: 10px;
-    font-size: 1.5rem;
-    text-shadow: 0 0 5px #00ff00;
-    z-index: 10001; 
-} */
-
-/* Matrix rain effect */
-/* .matrix-rain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: transparent;
-    z-index: 10000; 
-    pointer-events: none;
-} */
